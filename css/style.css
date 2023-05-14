@@ -1,0 +1,91 @@
+/* CSS Variables */
+
+:root {
+    --slide-width:800;
+    --slide-height:500;
+  }
+
+/* reset */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#slider{
+    width: calc(var(--slide-width)*1px);
+    height: calc(var(--slide-height)*1px);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+/* slider-controls styles */
+.slider-controls{
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    margin-left: 40px;
+}
+.slider-controls a:nth-child(1){
+    pointer-events: none;
+}
+.slider-controls a:nth-child(1) i{
+    color: #abb8c3;
+}
+
+.slider-controls i{
+    font-size: 3em;
+    color: #373a36;
+}
+
+/* slider-dots styles */
+.slider-dots{
+    width: inherit;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+
+}
+.slider-dots span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+    background-color: white;
+    cursor: pointer;
+}
+.active-ball {
+    background-color: black  !important;
+    transition: all 0.5s linear;
+}
+
+
+/* slides-container styles */
+.slides-container{
+    display: flex;
+    border: 2px solid yellow;
+    height: inherit;
+    transition: all .4s linear;
+    width: calc(var(--slide-count)* (var(--slide-width) * 1px));
+
+}
+/* slide styles */
+.slide{
+    border: 2px solid black;
+    height: inherit;
+    width: calc(var(--slide-width)*1px);
+}
+
+.slide img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
